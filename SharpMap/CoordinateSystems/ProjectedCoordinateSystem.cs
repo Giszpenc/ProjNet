@@ -62,7 +62,7 @@ namespace C4I.Applications.SCE.Interfaces.CoordinateSystems
 		/// <param name="Zone">UTM zone</param>
 		/// <param name="ZoneIsNorth">true of Northern hemisphere, false if southern</param>
 		/// <returns>UTM/WGS84 coordsys</returns>
-		public static ProjectedCoordinateSystem WGS84_UTM(int Zone, bool ZoneIsNorth, long authorityCode)
+		public static ProjectedCoordinateSystem WGS84_UTM(int Zone, bool ZoneIsNorth)
 		{
 			List<ProjectionParameter> pInfo = new List<ProjectionParameter>();
 			pInfo.Add(new ProjectionParameter("latitude_of_origin", 0));
@@ -77,7 +77,7 @@ namespace C4I.Applications.SCE.Interfaces.CoordinateSystems
 			axes.Add(new AxisInfo("East", AxisOrientationEnum.East));
 			axes.Add(new AxisInfo("North", AxisOrientationEnum.North));
 			return new ProjectedCoordinateSystem(C4I.Applications.SCE.Interfaces.CoordinateSystems.HorizontalDatum.WGS84,
-				C4I.Applications.SCE.Interfaces.CoordinateSystems.GeographicCoordinateSystem.Wgs84(authorityCode), C4I.Applications.SCE.Interfaces.CoordinateSystems.LinearUnit.Metre, proj, axes,
+				C4I.Applications.SCE.Interfaces.CoordinateSystems.GeographicCoordinateSystem.WGS84, C4I.Applications.SCE.Interfaces.CoordinateSystems.LinearUnit.Metre, proj, axes,
 				"WGS 84 / UTM zone " + Zone.ToString(System.Globalization.CultureInfo.InvariantCulture) + (ZoneIsNorth ? "N" : "S"), "EPSG", 32600 + Zone + (ZoneIsNorth ? 0 : 100),
 				String.Empty, "Large and medium scale topographic mapping and engineering survey.", string.Empty);
 		}

@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using C4I.Applications.SCE.Configuration;
 
 namespace C4I.Applications.SCE.Interfaces.CoordinateSystems
 {
@@ -62,24 +63,19 @@ namespace C4I.Applications.SCE.Interfaces.CoordinateSystems
 		/// <summary>
 		/// Creates a decimal degrees geographic coordinate system based on the WGS84 ellipsoid, suitable for GPS measurements
 		/// </summary>
-		public GeographicCoordinateSystem WGS84
+		public static GeographicCoordinateSystem WGS84
 		{
-			get { return Wgs84(AuthorityCode); }
+			get {
+				List<AxisInfo> axes = new List<AxisInfo>(2);
+				axes.Add(new AxisInfo("Lon", AxisOrientationEnum.East));
+				axes.Add(new AxisInfo("Lat", AxisOrientationEnum.North));
+				return new GeographicCoordinateSystem(CoordinateSystems.AngularUnit.Degrees,
+					CoordinateSystems.HorizontalDatum.WGS84, CoordinateSystems.PrimeMeridian.Greenwich, axes,
+					"WGS 84", "EPSG", SceConfiguration.Instance.WGS, String.Empty, string.Empty, string.Empty);
+			}
 		}
 
-        /// <summary>
-        /// Creates a decimal degrees geographic coordinate system based on the WGS84 ellipsoid, suitable for GPS measurements
-        /// </summary>
-        public static GeographicCoordinateSystem Wgs84(long authorityCode)
-        {
-            List<AxisInfo> axes = new List<AxisInfo>(2);
-            axes.Add(new AxisInfo("Lon", AxisOrientationEnum.East));
-            axes.Add(new AxisInfo("Lat", AxisOrientationEnum.North));
-            return new GeographicCoordinateSystem(CoordinateSystems.AngularUnit.Degrees,
-                CoordinateSystems.HorizontalDatum.WGS84, CoordinateSystems.PrimeMeridian.Greenwich, axes,
-                "WGS 84", "EPSG", authorityCode, String.Empty, string.Empty, string.Empty);
-        }
-        #endregion
+		#endregion
 
 		#region IGeographicCoordinateSystem Members
 		
