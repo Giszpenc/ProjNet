@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpMap", "SharpMap\SharpMap.csproj", "{77A01525-0760-4C3A-9419-E2C9AA0CA196}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4I.Applications.SCE.Interfaces", "SharpMap\C4I.Applications.SCE.Interfaces.csproj", "{77A01525-0760-4C3A-9419-E2C9AA0CA196}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

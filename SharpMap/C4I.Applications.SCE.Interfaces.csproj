@@ -7,8 +7,8 @@
     <ProjectGuid>{77A01525-0760-4C3A-9419-E2C9AA0CA196}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>C4I.Applications._3rdParty.SharpMap</RootNamespace>
-    <AssemblyName>C4I.Applications.3rdParty.SharpMap</AssemblyName>
+    <RootNamespace>C4I.Applications.SCE.Interfaces</RootNamespace>
+    <AssemblyName>C4I.Applications.SCE.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
